@@ -1,0 +1,58 @@
+/*color of page*/
+body{
+    background: linear-gradient(45deg,blue,yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.dots{
+    position: relative;
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: slategrey;  /*color of background of 9 dots*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.dots span{
+    background-color: white; /* color of inside dot*/
+    border-radius: 50%;
+    height: 7px;
+    width: 7px;
+    position: absolute;
+    transform: translate(calc(12px * var(--x)),calc(12px * var(--y)));
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dots.active{
+    width: 200px;
+    height: 200px;
+}
+.dots.active span{
+    transform: translate(calc(60px * var(--x)),calc(60px * var(--y)));
+    width: 40px;
+    height: 40px;
+    background-color: gray;
+    transition: calc(0.1s * var(--i));
+}
+.dots span ion-icon{
+    font-size: 0em;
+    transition: 0.5s;
+}
+.dots.active span ion-icon{
+    font-size: 1.5em;
+
+}
+.dots.active span:hover ion-icon{
+    color: blue;
+    filter: drop-shadow(0,0,2px,blue) drop-shadow(0,0,5px,blue) drop-shadow(0,0,10px,blue);
+}
